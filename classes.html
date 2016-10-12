@@ -1,0 +1,163 @@
+<!DOCTYPE html><html><head><title>From Java to Kotlin</title><meta charset="utf-8"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/highlightjs-github.css"><script src="js/highlight.9.4.0.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><a target="_blank" href="https://github.com/fabiomsr/fom-java-to-kotlin"><img id="fork-me" src="http://fabiomsr.github.io/fom-java-to-kotlin/fork-me.png"></a><div id="note">From Java to Kotlin</div><ul><li><a href="index.html">Basic</a></li><li><a href="functions.html">Functions</a></li><li><a href="classes.html">Classes</a></li></ul><div class="section"><div class="title">CLASSES</div><div class="case"><div class="name">Object Instance</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>final File file = new File("file.txt");
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val file = File("file.txt")
+</code></pre></div></div></div><div class="case"><div class="name">Class</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public final class User {
+}
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>class User {
+}
+</code></pre></div></div></div><div class="case"><div class="name">Open Class</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public class User {
+}
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>open class User {
+}
+</code></pre></div></div></div><div class="case"><div class="name">Final Attributes</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>final class User {
+     private final String name;
+
+     public User(String name) {
+         this.name = name;
+     }
+
+     public String getName() {
+         return name;
+     }
+ }
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>class User(val name: String) {
+}
+</code></pre></div></div></div><div class="case"><div class="name">Attributes</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>final class User {
+     private String name;
+
+     public User(String name) {
+         this.name = name;
+     }
+
+     public String getName() {
+         return name;
+     }
+
+     public void setName(String name) {
+         this.name = name;
+     }
+ }
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>class User(var name: String) {
+}
+</code></pre></div></div></div><div class="case"><div class="name">Multiple Constructors</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>final class User {
+     private String name;
+     private String lastName;
+
+     public User(String name) {
+         this(name, "");
+     }
+
+     public User(String name, String lastName) {
+         this.name = name;
+         this.lastName = lastName;
+     }
+
+     // And Getters & Setters
+ }
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>class User(var name: String, var lastName: String = "") {
+}
+</code></pre></div></div></div><div class="case"><div class="name">Properties</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public class Document {
+    private String id = "00x";
+
+     public String getId() {
+         return id;
+     }
+
+     public void setId(String id) {
+         if(id != null && !id.isEmpty()) {
+             this.id = id;
+         }
+     }
+ }
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>class Document{
+    var id : String = "00x"
+        set(value) {
+            if(value.isNotEmpty())  field = value
+        }
+}
+</code></pre></div></div></div></div><div class="section"><div class="title">FUNCTIONS</div><div class="case"><div class="name">Abstract Class</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public abstract class Document{
+   public abstract int calculateSize();
+}
+
+public class Photo extends Document{
+    @Override
+    public int calculateSize() {
+
+    }
+}
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>abstract class Document {
+    abstract fun calculateSize(): Int
+}
+
+class Photo : Document() {
+    override fun calculateSize(): Int {
+
+    }
+}
+</code></pre></div></div></div><div class="case"><div class="name">Singleton</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public class Document {
+   private static final Document INSTANCE = new Document();
+
+   public static Document getInstance(){
+       return INSTANCE;
+   }
+
+ }
+ 
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>object Document {
+
+}
+</code></pre></div></div></div><div class="case"><div class="name">Extensions</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public class ByteArrayUtils {
+      public static String toHexString(byte[] data) {
+
+      }
+  }
+
+  final byte[] dummyData = new byte[10];
+  final String hexValue = ByteArrayUtils.toHexString(dummyData);
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun ByteArray.toHex() : String {
+
+}
+
+val dummyData = byteArrayOf();
+val hexValue = dummyData.toHex()
+</code></pre></div></div></div><div class="case"><div class="name">Inner Class</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public class Documment {
+
+    class InnerClass {
+
+    }
+
+}
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>class Document {
+    internal inner class InnerClass {}
+}
+</code></pre></div></div></div><div class="case"><div class="name">Nested Class</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public class Documment {
+
+    public static class InnerClass {
+
+    }
+
+}
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>class Documment {
+
+    class InnerClass{}
+
+}
+</code></pre></div></div></div><div class="case"><div class="name">Interface</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public interface Printable {
+    void print();
+}
+
+public class Document implements Printable {
+    @Override
+    public void print() {
+
+    }
+}
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>interface Printable{
+    fun print()
+}
+
+class Document : Printable{
+    override fun print() {
+
+    }
+}
+</code></pre></div></div></div></div></body></html>

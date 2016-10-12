@@ -1,0 +1,143 @@
+<!DOCTYPE html><html><head><title>From Java to Kotlin</title><meta charset="utf-8"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/highlightjs-github.css"><script src="js/highlight.9.4.0.js"></script><script>hljs.initHighlightingOnLoad();</script></head><body><a target="_blank" href="https://github.com/fabiomsr/fom-java-to-kotlin"><img id="fork-me" src="http://fabiomsr.github.io/fom-java-to-kotlin/fork-me.png"></a><div id="note">From Java to Kotlin</div><ul><li><a href="index.html">Basic</a></li><li><a href="functions.html">Functions</a></li><li><a href="classes.html">Classes</a></li></ul><div class="section"><div class="title">FUNCTIONS</div><div class="case"><div class="name">Basic Function</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public void hello() {
+  System.out.print("Hello, World!");
+}
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun hello() {
+    println("Hello, World!");
+}
+</code></pre></div></div></div><div class="case"><div class="name">Arguments</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public void hello(String name){
+  System.out.print("Hello, " + name + "!");
+}
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun hello(name: String) {
+    println("Hello, $name!");
+}
+</code></pre></div></div></div><div class="case"><div class="name">Default Values</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public void hello(String name) {
+  if (name == null) {
+    name = "World";
+  }
+
+  System.out.print("Hello, " + name + "!");
+}
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun hello(name: String = "World") {
+    println("Hello, $name!")
+}
+</code></pre></div></div></div><div class="case"><div class="name">Return</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public boolean hasItems() {
+  return true;
+}
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun hasItems() : Boolean {
+    return true
+}
+</code></pre></div></div></div><div class="case"><div class="name">Single-Expression</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public double cube(double x) {
+  return x * x * x;
+}
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun cube(x: Double) : Double = x * x * x
+</code></pre></div></div></div></div><div class="section"><div class="title">FUNCTIONS</div><div class="case"><div class="name">Vararg</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public int sum(int... numbers) { }
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun sum(vararg x: Int) { }
+</code></pre></div></div></div><div class="case"><div class="name">Main</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public class MyClass {
+    public static void main(String[] args){
+
+    }
+}
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun main(args: Array&ltString&gt) {
+
+}
+</code></pre></div></div></div><div class="case"><div class="name">Named Arguments</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public static void main(String[]args){
+  openFile("file.txt", true);
+}
+
+public static File openFile(String filename, boolean readOnly) { }
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun main(args: Array&ltString&gt) {
+  openFile("file.txt", readOnly = true)
+}
+
+fun openFile(filename: String, readOnly: Boolean) : File { }
+</code></pre></div></div></div><div class="case"><div class="name">Optional Arguments</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public static void main(String[]args){
+  createFile("file.txt");
+
+  createFile("file.txt", true);
+
+  createFile("file.txt", true, false);
+
+  createExecutableFile("file.txt");
+}
+
+public static File createFile(String filename) { }
+
+public static File createFile(String filename, boolean appendDate) { }
+
+public static File createFile(String filename, boolean appendDate,
+                              boolean executable) { }
+
+public static File createExecutableFile(String filename) { }
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun main(args: Array&ltString&gt) {
+  createFile("file.txt")
+
+  createFile("file.txt", true)
+  createFile("file.txt", appendDate = true)
+
+  createFile("file.txt", true, false)
+  createFile("file.txt", appendDate = true, executable = true)
+
+  createFile("file.txt", executable = true)
+}
+
+fun createFile(filename: String, appendDate: Boolean = false,
+               executable: Boolean = false): File { }
+</code></pre></div></div></div><div class="case"><div class="name">Generic Methods</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public void init() {
+  List&ltString&gt moduleInferred = create("net");
+}
+
+public &ltT&gt List&ltT&gt createList(T item) { }
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun init() {
+  val module = createList&ltString&gt("net")
+  val moduleInferred = createList("net")
+}
+
+fun &ltT&gt createList(item: T): List&ltT&gt { }
+</code></pre></div></div></div><div class="case"><div class="name">Tuples</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public static void main(String[]args) {
+    Book book = createBook();
+
+    System.out.println(book);
+    System.out.println("Title: " + book.title);
+}
+
+public static Book createBook(){
+    return new Book("title_01", "author_01");
+}
+
+public class Book {
+    final private String title;
+    final private String author;
+
+    public Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    @Override
+    public String toString() {
+        return "Title: " + title + " Author: " + author;
+    }
+}
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun main(args: Array&ltString&gt) {
+    val book = createBook();
+    // or
+    val (title, author) = createBook();
+
+    println(book)
+    println("Title: $title")
+}
+
+fun createBook() : Book{
+    return Book("title_01", "author_01")
+}
+
+data class Book(val title : String, val author : String)
+</code></pre></div></div></div></div></body></html>
