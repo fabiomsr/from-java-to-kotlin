@@ -1,0 +1,5 @@
+class Documment {
+
+    class InnerClass{}
+
+}

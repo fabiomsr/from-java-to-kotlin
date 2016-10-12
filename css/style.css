@@ -1,0 +1,111 @@
+body {
+    font-family: "Helvetica Neue", sans-serif;
+    margin: 0;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.section {
+    background-color: #f4f4f4;
+    padding: 4em 3em;
+}
+
+.section:nth-child(2n) {
+    background-color: white;
+}
+
+.title {
+    font-size: 2.7em;
+    color: #888;
+    font-weight: 100;
+    letter-spacing: 0.2em;
+    text-align: center;
+}
+
+.case {}
+
+.name {
+    font-size: 1.8em;
+    color: #444;
+    font-weight: 300;
+    text-align: center;
+    margin: 60px;
+}
+
+.pair {
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -ms-box-pack: center;
+    -ms-box-align: center;
+}
+
+.card {
+    flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    max-width: 590px;
+    margin: 0 10px;
+}
+
+.lang {
+    font-size: 1.3em;
+    color: #666;
+    padding-bottom: 0;
+    font-weight: 200;
+    letter-spacing: 0.07em;
+}
+
+.code {
+    font-size: 1.15em;
+    background-color: white;
+    margin: 0.4em 0 0 0;
+    padding: 0.4em;
+    line-height: 1.3em;
+}
+.section:nth-child(2n) .code {
+    background-color: #f4f4f4;
+}
+
+#fork-me {
+    position: absolute;
+    right: 0;
+}
+
+#note {
+    font-size: 1.5em;
+    color: #fff;
+    text-align: center;
+    padding: 0.6em;
+    background: #414141;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #414141;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #3c3c3c;
+}

@@ -1,0 +1,31 @@
+{
+  "name": "from-java-to-kotlin",
+  "version": "0.0.1",
+  "description": "From Java to Kotlin ------",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jiyinyiyong, nilhcem, fabiomsr",
+  "license": "MIT",
+  "devDependencies": {
+    "mission": "0.0.7",
+    "shelljs": "^0.3.0"
+  },
+  "dependencies": {
+    "mission": "^0.0.7",
+    "shelljs": "^0.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fabiomsr/from-java-to-kotlin.git"
+  },
+  "keywords": [
+    "java",
+    "kotlin"
+  ],
+  "bugs": {
+    "url": "https://github.com/fabiomsr/from-java-to-kotlin/issues"
+  },
+  "homepage": "https://github.com/fabiomsr/from-java-to-kotlin"
+}
