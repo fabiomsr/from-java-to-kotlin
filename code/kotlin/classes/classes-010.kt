@@ -1,3 +1,3 @@
 class Document {
-    internal inner class InnerClass {}
+    internal inner class InnerClass
 }

@@ -81,6 +81,6 @@ html
       .case (.name "Generic Methods") $ .pair
         .card (.lang Java) $ pre.code $ code (@insert ../code/java/functions/functions-09.java)
         .card (.lang Kotlin) $ pre.code $ code (@insert ../code/kotlin/functions/functions-09.kt)
-      .case (.name "Tuples") $ .pair
+      .case (.name "Data Classes - Destructuring") $ .pair
         .card (.lang Java) $ pre.code $ code (@insert ../code/java/functions/functions-10.java)
         .card (.lang Kotlin) $ pre.code $ code (@insert ../code/kotlin/functions/functions-10.kt)

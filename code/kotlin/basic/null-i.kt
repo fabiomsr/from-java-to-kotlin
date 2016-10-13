@@ -1,4 +1,5 @@
-val name = null // String? type
+val name : String? = null
+
 var lastName : String?
 lastName = null
 

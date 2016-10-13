@@ -49,7 +49,7 @@ html
 
     .section
       .title CLASSES
-      .case (.name "Object Instance") $ .pair
+      .case (.name "Constructor Call") $ .pair
         .card (.lang Java) $ pre.code $ code (@insert ../code/java/classes/classes-00.java)
         .card (.lang Kotlin) $ pre.code $ code (@insert ../code/kotlin/classes/classes-00.kt)
       .case (.name "Class") $ .pair
@@ -61,10 +61,10 @@ html
       .case (.name "Final Attributes") $ .pair
         .card (.lang Java) $ pre.code $ code (@insert ../code/java/classes/classes-03.java)
         .card (.lang Kotlin) $ pre.code $ code (@insert ../code/kotlin/classes/classes-03.kt)
-      .case (.name "Attributes") $ .pair
+      .case (.name "Primary Constructor") $ .pair
         .card (.lang Java) $ pre.code $ code (@insert ../code/java/classes/classes-04.java)
         .card (.lang Kotlin) $ pre.code $ code (@insert ../code/kotlin/classes/classes-04.kt)
-      .case (.name "Multiple Constructors") $ .pair
+      .case (.name "Optional Arguments in Constructors") $ .pair
         .card (.lang Java) $ pre.code $ code (@insert ../code/java/classes/classes-05.java)
         .card (.lang Kotlin) $ pre.code $ code (@insert ../code/kotlin/classes/classes-05.kt)
       .case (.name "Properties") $ .pair

@@ -1,5 +1,5 @@
 val text = """
-            First Line
-            Second Line
-            Third Line
-    """
+        |First Line
+        |Second Line
+        |Third Line
+""".trimMargin()

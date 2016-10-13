@@ -1,2 +1,1 @@
-class User(var name: String, var lastName: String = "") {
-}
+class User(var name: String, var lastName: String = "")
