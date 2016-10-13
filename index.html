@@ -15,9 +15,11 @@ var z = 2
 z = 3
 w = 1 
 </code></pre></div></div></div><div class="case"><div class="name">Null I</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>final String name = null;
+
 String lastName;
 lastName = null
-</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val name = null // String? type
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val name : String? = null
+
 var lastName : String?
 lastName = null
 
@@ -41,10 +43,10 @@ val otherText = "My name is: ${name.substring(2)}"
               "Second Line\n" +
               "Third Line";
 </code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val text = """
-            First Line
-            Second Line
-            Third Line
-    """
+        |First Line
+        |Second Line
+        |Third Line
+""".trimMargin()
 </code></pre></div></div></div><div class="case"><div class="name">Ternary Operator</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>String text = x > 5 ? "x > 5" : "x <= 5";
 </code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val text = if (x > 5)
               "x > 5"
@@ -75,38 +77,62 @@ if (x in 0..10) { }
 </code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>if (a is String) {
   val result = a.substring(1)
 }
-</code></pre></div></div></div><div class="case"><div class="name">Switch / When</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>final String result;
+</code></pre></div></div></div><div class="case"><div class="name">Switch / When</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>final int x = // value;
+final String xResult;
 
 switch (x){
   case 0:
   case 11:
-    result = "0 or 11";
+    xResult = "0 or 11";
     break;
   case 1:
   case 2:
     //...
   case 10:
-    result = "from 1 to 10";
+    xResult = "from 1 to 10";
     break;
   default:
     if(x < 12 && x > 14) {
-      result = "not from 12 to 14";
+      xResult = "not from 12 to 14";
       break;
     }
 
     if(isOdd(x)) {
-      result = "is odd";
+      xResult = "is odd";
       break;
     }
 
-    result = "otherwise";
+    xResult = "otherwise";
 }
-</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val result = when (x) {
-    0, 11 -> "0 or 11"
-    in 1..10 -> "from 1 to 10"
-    !in 12..14 -> "not from 12 to 14"
-    isOdd(x) -> "is odd"
-    else -> "otherwise"
+
+
+
+final int y = // value;
+final String yResult;
+
+if(isNegative(y)){
+  yResult = "is Negative";
+} else if(isZero(y)){
+  yResult = "is Zero";
+}else if(isOdd(y)){
+  yResult = "is Odd";
+}else {
+  yResult = "otherwise";
+}
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val x = // value
+val xResult = when (x) {
+  0, 11 -> "0 or 11"
+  in 1..10 -> "from 1 to 10"
+  !in 12..14 -> "not from 12 to 14"
+  else -> "otherwise"
+}
+
+val y = // value
+val yResult = when {
+  isNegative(y) -> "is Negative"
+  isZero(y) -> "is Zero"
+  isOdd(y) -> "is odd"
+  else -> "otherwise"
 }
 </code></pre></div></div></div><div class="case"><div class="name">For</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>for (int i = 1; i < 11 ; i++) { }
 
