@@ -8,5 +8,4 @@ Collections.sort(users, new Comparator&ltUser&gt(){
 
 // or
 
-Collections.sort(users, (user, otherUser) ->
-                user.lastname.compareTo(otherUser.lastname));
+users.sort(Comparator.comparing(user -> user.lastname));
