@@ -2,13 +2,13 @@
   System.out.print("Hello, World!");
 }
 </code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun hello() {
-    println("Hello, World!");
+    println("Hello, World!")
 }
 </code></pre></div></div></div><div class="case"><div class="name">Arguments</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public void hello(String name){
   System.out.print("Hello, " + name + "!");
 }
 </code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun hello(name: String) {
-    println("Hello, $name!");
+    println("Hello, $name!")
 }
 </code></pre></div></div></div><div class="case"><div class="name">Default Values</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>public void hello(String name) {
   if (name == null) {
@@ -129,7 +129,7 @@ public class Book {
 </code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>fun main(args: Array&ltString&gt) {
     val book = createBook();
     // or
-    val (title, author) = createBook();
+    val (title, author) = createBook()
 
     println(book)
     println("Title: $title")
@@ -139,5 +139,5 @@ fun createBook() : Book{
     return Book("title_01", "author_01")
 }
 
-data class Book(val title : String, val author : String)
+data class Book(val title: String, val author: String)
 </code></pre></div></div></div></div></body></html>

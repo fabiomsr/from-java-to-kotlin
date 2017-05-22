@@ -4,13 +4,13 @@ System.out.println("Hello, World!");
 println("Hello, World!")
 </code></pre></div></div></div><div class="case"><div class="name">Variables I</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>final int x;
 final int y = 1;
-</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val x : Int
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val x: Int
 val y = 1
 </code></pre></div></div></div><div class="case"><div class="name">Variables II</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>int w;
 int z = 2;
 z = 3;
 w = 1;
-</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>var w : Int
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>var w: Int
 var z = 2
 z = 3
 w = 1 
@@ -18,12 +18,12 @@ w = 1
 
 String lastName;
 lastName = null
-</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val name : String? = null
+</code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val name: String? = null
 
-var lastName : String?
+var lastName: String?
 lastName = null
 
-var firstName : String
+var firstName: String
 firstName = null // Compilation error!!
 </code></pre></div></div></div><div class="case"><div class="name">Null II</div><div class="pair"><div class="card"><div class="lang">Java</div><pre class="code"><code>if(text != null){
   int length = text.length();
@@ -124,7 +124,7 @@ val xResult = when (x) {
   0, 11 -> "0 or 11"
   in 1..10 -> "from 1 to 10"
   !in 12..14 -> "not from 12 to 14"
-  else -> "otherwise"
+  else -> if (isOdd(x)) { "is odd" } else { "otherwise" }
 }
 
 val y = // value
@@ -155,6 +155,14 @@ final Map&ltInteger, String&gt map = new HashMap&ltInteger, String&gt();
 map.put(1, "One");
 map.put(2, "Two");
 map.put(3, "Three");
+
+
+// Java 9
+final List&ltInteger&gt numbers = List.of(1, 2, 3);
+
+final Map&ltInteger, String&gt map = Map.of(1, "One",
+                                            2, "Two",
+                                            3, "Three");
 </code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val numbers = listOf(1, 2, 3)
 
 val map = mapOf(1 to "One",
@@ -215,8 +223,7 @@ Collections.sort(users, new Comparator&ltUser&gt(){
 
 // or
 
-Collections.sort(users, (user, otherUser) ->
-                user.lastname.compareTo(otherUser.lastname));
+users.sort(Comparator.comparing(user -> user.lastname));
 </code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val users = getUsers()
 users.sortedBy { it.lastname }
 </code></pre></div></div></div></div></body></html>
