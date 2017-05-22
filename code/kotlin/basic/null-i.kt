@@ -1,7 +1,7 @@
-val name : String? = null
+val name: String? = null
 
-var lastName : String?
+var lastName: String?
 lastName = null
 
-var firstName : String
+var firstName: String
 firstName = null // Compilation error!!

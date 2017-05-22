@@ -1,2 +1,2 @@
-val x : Int
+val x: Int
 val y = 1
