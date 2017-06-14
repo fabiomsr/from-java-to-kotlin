@@ -32,6 +32,8 @@ html
     ul
       li
         a
+          :class
+            = selected
           :href
             = index.html
           = Basic

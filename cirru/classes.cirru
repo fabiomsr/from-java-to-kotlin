@@ -42,6 +42,8 @@ html
           = Functions
       li
         a
+          :class
+            = selected
           :href
             = classes.html
           = Classes

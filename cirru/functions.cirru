@@ -37,6 +37,8 @@ html
           = Basic
       li
         a
+          :class
+            = selected
           :href
             = functions.html
           = Functions

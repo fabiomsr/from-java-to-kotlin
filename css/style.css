@@ -109,3 +109,7 @@ li a {
 li a:hover {
     background-color: #3c3c3c;
 }
+
+li a.selected {
+    background-color: #4e4e4e;
+}
