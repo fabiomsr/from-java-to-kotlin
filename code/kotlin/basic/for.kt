@@ -1,4 +1,4 @@
-for (i in 1..10) { }
+for (i in 1 until 11) { }
 
 for (i in 1..10 step 2) {}
 
