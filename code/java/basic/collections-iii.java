@@ -15,3 +15,9 @@ for (int number : numbers) {
 
   groups.get("odd").add(number);
 }
+
+// or
+
+Map&lt;String, List&lt;Integer>> groups = items.stream().collect(
+  Collectors.groupingBy(item -> (item & 1) == 0 ? "even" : "odd")
+);
