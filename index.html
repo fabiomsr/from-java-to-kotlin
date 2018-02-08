@@ -200,6 +200,12 @@ for (int number : numbers) {
 
   groups.get("odd").add(number);
 }
+
+// or
+
+Map&lt;String, List&lt;Integer>> groups = items.stream().collect(
+  Collectors.groupingBy(item -> (item & 1) == 0 ? "even" : "odd")
+);
 </code></pre></div><div class="card"><div class="lang">Kotlin</div><pre class="code"><code>val groups = numbers.groupBy {
                 if (it and 1 == 0) "even" else "odd"
              }
