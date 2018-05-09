@@ -9,7 +9,7 @@ public static Book createBook(){
     return new Book("title_01", "author_01");
 }
 
-public class Book {
+public static class Book {
     final private String title;
     final private String author;
 
