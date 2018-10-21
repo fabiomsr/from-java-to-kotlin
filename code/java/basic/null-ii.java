@@ -1,3 +1,7 @@
+int length;
 if(text != null){
-  int length = text.length();
+  length = text.length();
+}
+else{
+  length = null;
 }
