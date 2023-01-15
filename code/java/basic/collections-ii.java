@@ -1,9 +1,5 @@
-for (int number : numbers) {
-  System.out.println(number);
-}
+numbers.forEach(System.out::println);
 
-for (int number : numbers) {
-  if(number > 5) {
-    System.out.println(number);
-  }
-}
+numbers.stream()
+    .filter(number -> number > 5)
+    .forEach(System.out::println);
